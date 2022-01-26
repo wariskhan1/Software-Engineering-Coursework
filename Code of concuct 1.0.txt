@@ -1,0 +1,76 @@
+Code of conduct and ethics:
+
+Following are the initial policies to agree, follow and respect. These can be
+updated, added and/or deleted by democratic vote or coin flip in case of draw.
+
+###############################################################################
+1. Respect each other. Adequate and polite behaviour in a team. Professional
+   behaviour developing code, assisteng to meetings and with Client/s.
+
+2. Finish task/s assigned in each meeting before deadline, and desirable
+   two days prior.
+
+3. Responsability for individual and group tasks.
+
+4. Let team know about delays or difficulties as soon as possible 
+
+5. In case of develop COVID-19 symptoms, proceed online via "Discord" or
+   "MS Teams"
+
+6. Be present in ALL meetings. Come on time, in adequate manner and prepared
+   with knowledge and skills adquired previously.
+
+7. Use English to all forms of communication in a team and to the Client/s.
+
+8. In case of any dispute, solve problem democratically by vote, ALLWAYS
+   reasoning the chosen option.
+
+9. Check team members wellbeing, be supportive and encourage them.
+
+10. If team member is upset, update the team about it as soon as possible.
+
+11. Discrimination towards members because of age, gender, religion,
+    ethnicity and color is NOT allowed.
+
+12. Meetings should be face to face preferable. And the frequency is two
+    times per week. One in class during lab session and second after class
+    as long it required (Wednesdays).
+
+13. In case of serious problems in a team, report it to staff (Dr. Tehrani).
+
+14. Bring student ID to verify authorship of working in a project. And to 
+    record attendance.
+
+15. ALLWAYS follow the instruction and specifications of Client. Let client 
+    inform about improvements as soon as possible by verbal communication
+    during class.
+
+16. Buy a drink (not alcohol) to everyone in a team if no attendance to a 
+    meeting. Justifications are allowed. 
+
+
+
+
+Please, write your name in CAPITALS to confirm your understanding and if you 
+AGREE to these SOFTWARE ENGINEERING Ethics.
+
+
+Name:
+
+
+Name:
+
+
+Name:
+
+
+Name: 
+
+
+
+
+
+
+
+
+
