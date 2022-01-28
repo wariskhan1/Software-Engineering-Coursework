@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-As cmembers of the team we are committed to working in a professional and welcoming environment. The following are the initial policies we pledge to agree, follow and respect. These can be updated, added and/or deleted by a majority democratic vote.
+As members of the team we are committed to working in a professional and welcoming environment. The following are the initial policies we pledge to agree, follow and respect. These can be updated, added and/or deleted by a majority democratic vote.
 
 ## Our Standards
 
