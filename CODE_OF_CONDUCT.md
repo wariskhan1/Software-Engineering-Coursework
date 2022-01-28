@@ -54,3 +54,4 @@ As members of the team we are committed to working in a professional and welcomi
 ## Enforcement 
 
 Members in the team who do not follow the Code of Conduct, may face temporary or permanent repercussions as determined by other members
+
