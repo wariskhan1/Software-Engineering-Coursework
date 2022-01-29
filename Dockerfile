@@ -1,6 +1,4 @@
-FROM ubuntu
-LABEL maintainer ""
-
-ADD https://github.com/wariskhan1/Software-Engineering-Coursework.git
+FROM ubuntu:latest
+LABEL maintainer " "
 
 COPY ./code/ /usr/local/htdocs
