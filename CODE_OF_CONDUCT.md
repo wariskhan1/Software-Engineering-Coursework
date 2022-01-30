@@ -36,11 +36,19 @@ As members of the team we are committed to working in a professional and welcomi
     
 * **Equality**  - Everyone in the team is equal and no one has more say over another.
 
-* **Meetings** - All group meetings should be face to face preferably. The frequency of meetings is two
-    times per week. One in class during Tueday 3:00pm GMT until 4:00pm GMT and second meeting will be held after class
-    as long it required (Wednesdays). In the case of a member not attending the meeting without reason you are to buy a coffee for everyone in the team. Justifications are allowed. If more extra meetings are needed during the week, this can be done online during a time when each member is free.
+* **Meetings** - All group meetings should be face to face preferably. The frequency of meetings is three
+    times per week. 
+    The meeting times will be held on : 
+    
+    Monday (2:00pm - 3:00pm)
+    
+    Wednesday (2:00pm - 3:15pm)
+    
+    Friday (5pm - 6pm) 
+    
+In the case of a member not attending the meeting without reason you are to buy a coffee for everyone in the team. Justifications are allowed. If more extra meetings are needed during the week, this can be done online during a time when each member is free.
 
-* **Problems** - In case of serious problems in the team, report it to staff (Dr. Tehrani).
+* **Problems** - In case of serious problems within the team, report it to staff (Dr. Tehrani).
 
 * **Authorship** - Bring student ID to verify authorship of work in the project and to 
     record attendance.
