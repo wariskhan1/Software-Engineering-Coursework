@@ -63,3 +63,17 @@ In the case of a member not attending the meeting without reason you are to buy 
 
 Members in the team who do not follow the Code of Conduct, may face temporary or permanent repercussions as determined by the staff.
 
+
+
+## SIGNATURES:
+
+
+*
+
+*
+
+*
+
+* TONY
+
+*****London, 02 February 2022.*****
