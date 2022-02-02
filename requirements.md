@@ -8,12 +8,13 @@
 GitHub
 * Your application must be deployable as a Docker container
 * You will work on the project as a Scrum team
+* Use an AGILE approach in the team
 * You should aim to develop a CRUD application
-* You need to do the following for your project
-* Identifying the requirements (functional and non-functional)
-* Prioritising the requirements (if applicable)
-* Task allocation
+* Identifying the requirements (functional and non-functional) of the project
+* Prioritising the requirements (if applicable) of the project
+* Task allocation in the whole projec
 * Identifying the scope of your project
-* Identifying the stakeholders
+* Identifying the stakeholders in the project
 * Risk management
 * The organisation has asked for the reports to be generated which is in the zip folder given
+* Present SPRINTS to Client regularly by presentation
