@@ -1,16 +1,13 @@
-# Specify image of NodeJS
 FROM node:latest
-# Define maintainer
-LABEL maintainer " "
+RUN apt-get -y update
 
-# Define working directory
-WORKDIR /app
-# Copy the .json file to the container
-COPY /app/coursework.json
-# Install npm
-RUN npm install
-# Copy rest of file to the container
-COPY /app
+FROM base AS requirements
 
-# Run script after image is built
-CMD [ "npm", "start" ]
+FROM mysql:latest
+RUN pip3 install -r requirements.txt
+
+FROM requirements AS test
+
+COPY /usr/src/coursework /desktop/coursework
+
+CMD [ "cmd", "project.js" ]
