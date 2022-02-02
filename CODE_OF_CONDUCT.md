@@ -66,11 +66,12 @@ Members in the team who do not follow the Code of Conduct, may face temporary or
 
 
 ## SIGNATURES:
+ **By writing my name in capitals below, I have understood the guidelines and have read all the code of conduct rules and ethics required in the work enviroment and pledge to follow it**
 
 
 *
 
-*
+* WARIS
 
 * BARBARA
 
