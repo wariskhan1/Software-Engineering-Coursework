@@ -4,7 +4,7 @@ FROM node:latest
 # Update the Ubuntu image
 RUN apt-get -y update
 
-# 
+# Create another image layer on top of base to install requirements
 FROM base AS requirements
 
 # Specify another image (MySQL)
