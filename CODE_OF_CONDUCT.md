@@ -54,7 +54,7 @@ In the case of a member not attending the meeting without reason you are to buy 
     record attendance.
 
 * **Requirements** - Always follow the instructions and specifications of the Client. Inform the client 
-    inform about improvements/developments as soon as possible by verbal communication
+    about improvements/developments as soon as possible by verbal communication
     during class or email if necessary.
     
 * **Dereliction** - In the case of dereliction of duty, a group meeting will be held to help the team member. If the attitude and work does not correlate with change, the evidence will be forwarded to a member of staff for further action if needed.
