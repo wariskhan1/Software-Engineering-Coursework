@@ -1,0 +1,23 @@
+{
+  "name": "nodejspackage",
+  "version": "1.0.0",
+  "description": "package json for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wariskhan1/Software-Engineering-Coursework.git"
+  },
+  "keywords": [
+    "nodejs",
+    "node"
+  ],
+  "author": "Waris Khan",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wariskhan1/Software-Engineering-Coursework/issues"
+  },
+  "homepage": "https://github.com/wariskhan1/Software-Engineering-Coursework#readme"
+}
