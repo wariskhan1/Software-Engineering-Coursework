@@ -11,4 +11,8 @@ In this page we will be  defining full use cases for our system
 
 *  Use case diagrams only only includes some of the relationships between use cases, actors, and systems. No order is shown such as 
 
-* 
+* Software Engineers constantly communicate with Client for understand the utility and requirements of the system, practically in real time.
+
+* User does NOT have relationship with Software Engineers team neither direct relationship with Client.
+
+*
