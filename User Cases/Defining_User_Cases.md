@@ -19,4 +19,8 @@ In this page we will be  defining full use cases for our system
 * it`s most commonly linked with software systems, although it may be used to any process.
 * use case diagram resembles the overall activity in the system and what roles are played in the system.
 * A use case diagram is graphic depiction of the interactions among the elements of a system .
-* 
+* A use case is the primary form of system/software requiremnets for a new software program under developed. Use cases specify the expected behaviour, and not the exact the method of making it happen.
+* A key concept of use case modeling is that it helps us design a system from end user`s perspective.
+* it is an effective technique  for communicating system behaviour in the user`s terms by specifying all externally visible system behavior.
+* Use case diagranes are used to gather the requirments of a system including internal and external influences. 
+* The purpose of use case diagram is to capture the dynamic aspect of a system is t ocapture the dynmaic aspect of a system.
