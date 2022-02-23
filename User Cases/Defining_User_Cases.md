@@ -17,5 +17,5 @@ In this page we will be  defining full use cases for our system
 
 * A use case is a descreption of how someone who uses a process or system will achieve a goal.
 * it`s most commonly linked with software systems, although it may be used to any process.
-* usecase diagram resembles the overall activity in the system and what roles are played in the system.
+* use case diagram resembles the overall activity in the system and what roles are played in the system.
 * 
