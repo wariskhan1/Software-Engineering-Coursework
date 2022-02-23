@@ -9,11 +9,11 @@ In this page we will be  defining full use cases for our system
 
 * It is a great way of easily projecting ideas and planning which is useful later on during project development
 
-*  Use case diagrams only only includes some of the relationships between use cases, actors, and systems. No order is shown such as 
+*  Use case diagram only includes some of the relationships between use cases, actors, and systems. No order is shown such as 
 
-* Software Engineers constantly communicate with Client for understand the utility and requirements of the system, practically in real time.
+* Software Engineers constantly communicate with Client to understand the utility and requirements of the system, practically in real-time.
 
-* User does NOT have relationship with Software Engineers team neither direct relationship with Client.
+* User does NOT have a relationship with Software Engineers team neither direct relationship with Client.
 
 * A use case is a descreption of how someone who uses a process or system will achieve a goal.
 * it`s most commonly linked with software systems, although it may be used to any process.
