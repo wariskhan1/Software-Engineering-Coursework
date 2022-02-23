@@ -15,4 +15,5 @@ In this page we will be  defining full use cases for our system
 
 * User does NOT have relationship with Software Engineers team neither direct relationship with Client.
 
-*
+* A use case is a descreption of how someone who uses a process or system will achieve a goal.
+* 
