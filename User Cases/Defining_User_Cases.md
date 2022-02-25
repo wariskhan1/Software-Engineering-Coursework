@@ -36,9 +36,9 @@ On this page, we will be defining full use cases for our system.
 * A use case diagram can help in providing a higher level view of the system hence we can say that it is a blue print of the system.
 
 * A use case diagram can be used for:
-  1. requirements analysis and high-level design;
-  2. reverse engineering;
-  3. forward engineering.
+  - requirements analysis and high-level design;
+  - reverse engineering;
+  - forward engineering.
   
   
   
