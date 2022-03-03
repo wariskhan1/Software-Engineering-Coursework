@@ -1,11 +1,6 @@
 # Tasks defined as user stories
-## \
-## \
-## \
 
-**As a Geography teacher, I currently teach in a primary school in Bristol. My main objective is to teach pupils basic knowledge of the world 
-and to improve the organisation of time so students can easily look up for data. Looking for a website that allow students to enjoy scrolling through the website without being bored. The website is important as its a substitute for books which can result in wasting time.
-It is also important for Realtime updated data because accurate data is one of the most important for research purposes**
+**As a Geography teacher, I want to teach pupils basic knowledge of the world so I am looking for a website that allow students to enjoy scrolling through the website without being bored and tehy could use it as a substitute for books.**
 
  [User Story For Caroline Clark]
 
