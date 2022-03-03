@@ -1,7 +1,4 @@
 # Tasks defined as user stories
-<br />
-<br />
-<br />
 
 **As a Geography teacher, I want to teach pupils basic knowledge of the world so I am looking for a website that allow students to enjoy scrolling through the website without being bored and tehy could use it as a substitute for books.**
 
