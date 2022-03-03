@@ -1,9 +1,8 @@
 # Tasks defined as user stories
-<br/>
-
-
-
-<br/>
+\n
+\n
+\n
+\n
 
 **As a Geography teacher, I currently teach in a primary school in Bristol. My main objective is to teach pupils basic knowledge of the world 
 and to improve the organisation of time so students can easily look up for data. Looking for a website that allow students to enjoy scrolling through the website without being bored. The website is important as its a substitute for books which can result in wasting time.
