@@ -1,6 +1,6 @@
 # Tasks defined as user stories
 
-**As a Geography teacher, I want to teach pupils basic knowledge of the world so I am looking for a website
+**As a geography teacher, I want to teach pupils basic knowledge of the world so I am looking for a website
 that allows students to enjoy scrolling through the website without being bored and they could use the website
 as its substitute for books which can result in wasting time.**
 
