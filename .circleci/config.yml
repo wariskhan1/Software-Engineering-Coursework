@@ -10,7 +10,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: my-build-commands
+      - run: echo "this is the build job"
   test:
     docker:
       - image: cimg/<language>:<version TAG>
@@ -19,16 +19,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: my-test-commands
-  deploy:
-    docker:
-      - image: cimg/<language>:<version TAG>
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - run: my-deploy-commands
+      - run: echo "this is the test job"
 
 # Orchestrate our job run sequence
 workflows:
@@ -38,11 +29,3 @@ workflows:
       - test:
           requires:
             - build
-      - hold:
-          type: approval
-          requires:
-            - build
-            - test
-      - deploy:
-          requires:
-            - hold
