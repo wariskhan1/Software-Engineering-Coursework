@@ -4,9 +4,9 @@
 that allows students to enjoy scrolling through the website without being bored and so that they could use the website
 as its substitute for books which can result in wasting time.**
 
-**As a geography teacher, I would like my students to be able to easily search for information about the world
-and quickly find rankings in various categories so that they can see which countries and cities have the largest 
-populations and which languages are most spoken in the world.**
+**As a geography teacher, I would like my students to be able to search for information about the world
+and quickly find rankings in various categories so that they can easly see which countries and cities have the largest 
+population and which languages are most spoken in the world.**
 
 [User Story For Caroline Clark]
 
@@ -26,6 +26,6 @@ so the more accurate and precise data I have, the easier the calculations will b
 in the ancient world, what is the difference between the countries in terms of the populations and civilizations
 so that my customers would feel like they have left with knowledge about the sites.**
 
-**As a tour guide, I want to be able to check informations about specific districts and regions so that I can recommend places to visit to my clients more accurately.**
+**As a tour guide, I want to be able to check informations about specific districts and regions so that I can more accurately recommend less crowded places to my customers who want to visit such places.**
 
 [User Story For Andrew Smith]
