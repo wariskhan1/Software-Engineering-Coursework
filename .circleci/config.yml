@@ -21,3 +21,18 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+          
+
+
+
+          jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - browser-tools/install-chromedriver
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
