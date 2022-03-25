@@ -1,7 +1,7 @@
 # Tasks defined as user stories
 
 **As a geography teacher, I want to teach pupils basic knowledge of the world so I am looking for a website
-that allows students to enjoy scrolling through the website without being bored and they could use the website
+that allows students to enjoy scrolling through the website without being bored and so that they could use the website
 as its substitute for books which can result in wasting time.**
 
 **As a geography teacher, I would like my students to be able to easily search for information about the world
@@ -16,14 +16,16 @@ can result in major repercussions with my research which could have a chain of e
 
 [User Story For John Smith]
 
-**As a student from Canada, I want to pass geography with good marks in my A-level exams and to do that
+**As a student, I want to pass geography with good marks in my A-level exams and to do that
 I use a website for my geography coursework which is based on capital cities and populations around the world
 so the more accurate and precise data I have, the easier the calculations will be later on to conclude.**
 
 [User Story For Mary Moore]
 
-**As a  professional tour guide, I want to inform customers about information about the names of the capital
+**As a professional tour guide, I want to inform customers about information about the names of the capital
 in the ancient world, what is the difference between the countries in terms of the populations and civilizations
 so that my customers would feel like they have left with knowledge about the sites.**
+
+**As a tour guide, I want to be able to check informations about specific districts and regions so that I can recommend places to visit to my clients more accurately.**
 
 [User Story For Andrew Smith]
