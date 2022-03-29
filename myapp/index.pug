@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title= "Languages"
+        style.
+            body {margin: 25px;}
+            footer {margin-top: 50px;}
+            h1 {color: midnightblue;}
+            img {display: block; margin-left: auto; margin-right: auto;}
+            .List {border: 3px outset black; text-align: left;}
+    body
+        // Division for image
+        - const divStyle = {"text-align": "center"}
+        div(style = divStyle)
+            h1 The most popular languages
+            img(src='https://live.staticflickr.com/5519/30968917131_a7b74cb688_4k.jpg' alt='flags' style='width:1450px; height:600px;')
+        br
+        // Division for paragraph and languages list
+        div.List
+            - const divStyle2 = {"margin-left": "15px"}
+            div(style=divStyle2)
+                p You can check here what languages are the most used and how many people speak them.
+                ul
+                    li Chinese 
+                    li English 
+                    li Hindi 
+                    li Spanish 
+                    li Arabic 
+                // 
+                for lang in languagesList
+                    td= lang.language
+                    td= lang.percentage
+    // Footer with information about the author
+    footer
+        p Author: Barbara Anna Kobak
