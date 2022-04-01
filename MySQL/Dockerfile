@@ -1,7 +1,7 @@
 # Create the image from mysql base
 FROM mysql
 
-# Set environment MYSQL_ROOT_PASSWORD to 123
+# Set environment MYSQL_ROOT_PASSWORD to foobar
 ENV MYSQL_ROOT_PASSWORD foobar
 # Copy the database backup to docker-entrypoint-initdb.d
 ADD sql_backup.sql /docker-entrypoint-initdb.d
