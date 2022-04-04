@@ -7,8 +7,8 @@ var app = express();
 function DBConnection(){
     return mysql.createConnection({
         host    : 'localhost',
-        user    : "SE",
-        password: "soft_eng_csw",
+        user    : "root",
+        password: "foobar",
         database: 'world'
     });
 }
