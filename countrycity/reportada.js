@@ -14,7 +14,7 @@ function DBConnection(){
 }
 
 // Use pug as templating engine
-app.set('view engine', 'pug');
+app.set('reportdata', 'pug');
 
 app.get('/index', function(req,res){
     var countrycityList = [];
