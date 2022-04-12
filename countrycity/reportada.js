@@ -58,7 +58,7 @@ var db = mysql.createConnection({
 });
 
 // Use pug as templating engine
-app.set('view engine', 'pug');
+app.set('reportdata', 'pug');
 
 // Connect to database
 db.connect(function(err){
@@ -68,7 +68,7 @@ db.connect(function(err){
   console.log('Database connected.');
 });
 
-app.get('/languages', function(req,res){
+app.get('/countrycity', function(req,res){
   res.send("Hello");
   let sql = "CREATE DATABASE testNode";
   db.query(sql,function(err,results,fields){
