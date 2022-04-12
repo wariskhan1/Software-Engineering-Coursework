@@ -86,19 +86,12 @@ app.listen(3001, function(err){
 
 
 
-const express = require('express');
+
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const res = require('express/lib/response');
-const app = express();
-const mysql = require('mysql')
-
-const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'foobar',
-    database: 'world',
-});
+//const app = express();
+//const mysql = require('mysql')
 
 app.use(cors());
 app.use(express.json())
