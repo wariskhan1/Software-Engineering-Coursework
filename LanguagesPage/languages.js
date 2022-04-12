@@ -30,7 +30,7 @@ app.get('/languages', function(req,res){
   })
 });
 
-app.listen(3001, function(err){
+app.listen(3000, function(err){
   if(err) throw err;
   console.log("Running on port 3000");
   console.log("You can access the webpage using http://localhost:3000/languages")
