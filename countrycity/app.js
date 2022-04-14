@@ -1,41 +1,93 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+/**
+ * Module dependencies.
+ */
+
+ var express = require('express')
+ , routes = require('./routes')
+ , user = require('./routes/user')
+ , http = require('http')
+ , path = require('path')
+ , EmployeeProvider = require('./employeeprovider').EmployeeProvider;
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.configure(function(){
+ app.set('port', process.env.PORT || 3000);
+ app.set('views', __dirname + '/views');
+ app.set('view engine', 'jade');
+ app.set('view options', {layout: false});
+ app.use(express.favicon());
+ app.use(express.logger('dev'));
+ app.use(express.bodyParser());
+ app.use(express.methodOverride());
+ app.use(app.router);
+ app.use(express.static(path.join(__dirname, 'public')));
+ app.enable('trust proxy');
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.configure('development', function(){
+ app.use(express.errorHandler());
 });
 
-module.exports = app;
+var employeeProvider= new EmployeeProvider();
+
+//Routes
+
+//index
+app.get('/', function(req, res){
+ employeeProvider.findAll(function(error, emps){
+     res.render('index', {
+           title: 'Employees',
+           employees:emps
+       });
+ });
+});
+
+//new employee
+app.get('/employee/new', function(req, res) {
+   res.render('employee_new', {
+       title: 'New Employee'
+   });
+});
+
+//save new employee
+app.post('/employee/new', function(req, res){
+   employeeProvider.save({
+       name: req.param('name'),
+       title: req.param('title')
+   }, function( error, docs) {
+       res.redirect('/')
+   });
+});
+
+//update an employee
+app.get('/employee/:id/edit', function(req, res) {
+ employeeProvider.findById(req.params.id, function(error, employee) {
+   res.render('employee_edit',
+   {
+     _id: employee._id.toHexString(),
+     name: employee.name,
+     title: employee.title,
+   });
+ });
+});
+
+//save updated employee
+app.post('/employee/:id/edit', function(req, res) {
+ employeeProvider.update(req.params.id,{
+   name: req.param('name'),
+   title: req.param('title')
+ }, function(error, docs) {
+   res.redirect('/')
+ });
+});
+
+//delete an employee
+app.get('/employee/:id/delete', function(req, res) {
+ employeeProvider.delete(req.params.id, function(error, docs) {
+   res.redirect('/')
+ });
+});
+
+app.listen(process.env.PORT || 3000);
