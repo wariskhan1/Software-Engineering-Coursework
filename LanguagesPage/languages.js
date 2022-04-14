@@ -1,17 +1,17 @@
 var express = require('express');
 var mysql = require('mysql');
+const { RR } = require('mysql/lib/PoolSelector');
 var app = express();
+
 
 var db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'BKobak',
     password: 'foobar',
     database: 'world',
-    port: 8081
+    port: 3306
 });
 
-// Use pug as templating engine
-app.set('view engine', 'pug');
 
 // Connect to database
 db.connect(function(err){
@@ -22,12 +22,16 @@ db.connect(function(err){
 });
 
 app.get('/languages', function(req,res){
-  res.send("Hello");
-  let sql = "CREATE DATABASE testNode";
-  db.query(sql,function(err,results,fields){
+  res.send("Working...");
+  /*
+  db.connect(function(err){
     if(err) throw err;
-    res.send("New Database is Created");
-  })
+    db.query("SELECT * FROM most_popular_languages", function(err,result,fields){
+      if(err) throw err;
+      console.log(result);
+    });
+  });
+  */
 });
 
 app.listen(3000, function(err){
