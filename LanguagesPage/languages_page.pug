@@ -10,7 +10,7 @@ html
       body {margin: 25px; background-color: black; color: white;}
       h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Oswald', sans-serif;}
       img {display: block; margin-left: auto; margin-right: auto;}
-      .List {border: 5px outset white; text-align: left;
+      .List {text-align: left;}
   body
     // Division for image
     div(style='text-align: center')
@@ -19,8 +19,12 @@ html
     // Division for paragraph and languages list
     .List
       div(style='margin-left: 15px; font-size: 20px;')
-        p
-          b You can check here what languages are most used and how many people speak them.
+        p(style='text-align: center; font-size: 25px; font-family: Oswald, sans-serif; letter-spacing: 1px')
+            b Find out which languages are the most popular in the world.
+        p(style='font-size: 20px; text-align: center; letter-spacing: 4px') Enter the number of languages you want to see.
+        br
+        br
+        br
         ul
           li Chinese
           li English
