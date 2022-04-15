@@ -1,0 +1,22 @@
+§ All the countries in the world organised by largest population to smallest
+SELECT name, population from country order by population desc;
+§ All the countries in a continent organised by largest population to smallest
+select Continent, Population, count(*) from country group by Continent ORDER by Population DESC;
+§ All the countries in a region organised by largest population to smallest
+SELECT continent, COUNT(Name), SUM(population) FROM country GROUP BY continent ORDER BY SUM(population) DESC;
+§ The top `N` populated countries in the world where `N` is provided by the user
+select Name, population from country order by population desc limit 10;
+§ The top `N` populated countries in a continent where `N` is provided by the user
+SELECT Continent, Name, Population FROM world.Country, ( SELECT GROUP_CONCAT(top_codes_per_group) AS top_codes FROM ( SELECT SUBSTRING_INDEX(GROUP_CONCAT(Code ORDER BY SurfaceArea DESC), ',', 5) AS top_codes_per_group FROM world.Country GROUP BY Continent ) s_top_codes_per_group ) s_top_codes WHERE FIND_IN_SET(Code, top_codes) ORDER BY Continent, Population DESC;
+§ The top `N` populated countries in a region where `N` is provided by the user
+?
+§ All the cities in the world organised by largest population to smallest
+SELECT * FROM world.country order by population DESC limit 10;
+§ All the cities in a continent organised by largest population to smallest
+
+§ All the cities in a region organised by largest population to smallest
+§ All the cities in a country organised by largest population to smallest
+§ All the cities in a district organised by largest population to smallest
+§ The top `N` populated cities in the world where `N` is provided by the user
+§ The top `N` populated cities in a continent where `N` is provided by the user
+§ The top `N` populated cities in a region where `N` is provided by the user
