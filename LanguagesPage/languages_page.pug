@@ -5,22 +5,20 @@ html
     meta(charset='utf-8')
     // Add title
     title Languages
-    // Add margin for the body, colour the header, add auto marging for image and border for class List
+    // Add style elements
     style.
-      body {margin: 25px;}
-      h1 {color: midnightblue;}
+      body {margin: 25px; background-color: black; color: white;}
+      h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Oswald', sans-serif;}
       img {display: block; margin-left: auto; margin-right: auto;}
-      .List {border: 3px outset black; text-align: left;}
+      .List {border: 5px outset white; text-align: left;
   body
     // Division for image
     div(style='text-align: center')
-      h1 The most popular languages
-      a(data-flickr-embed='true', data-header='true', title='flags')
-        img(src='https://live.staticflickr.com/5519/30968917131_a7b74cb688_4k.jpg', width='1450', height='600', alt='flags')
+      h1 MOST POPULAR LANGUAGES
     br
     // Division for paragraph and languages list
     .List
-      div(style='margin-left: 15px;')
+      div(style='margin-left: 15px; font-size: 20px;')
         p
           b You can check here what languages are most used and how many people speak them.
         ul
@@ -29,6 +27,8 @@ html
           li Hindi
           li Spanish
           li Arabic
+
     // Footer with information about the author
-    footer(style='margin-top: 50px;')
+    footer(style='margin-top: 50px; font-size: 18px')
+      p ________________________
       p Author: Barbara Anna Kobak
