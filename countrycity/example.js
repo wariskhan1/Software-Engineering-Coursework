@@ -6,21 +6,21 @@
         table 
         {
             width: 100%;
-        }
+        {"}"}
         table, th, td 
         {
             border: solid 1px #DDD;
             border-collapse: collapse;
             padding: 2px 3px;
             text-align: center;
-        }
+        {"}"}
       
         input[type='button'] 
         {
             cursor: pointer;
             border: none;
             color: #FFF;
-        }
+        {"}"}
         
         input[type='text'], select 
         {
@@ -28,11 +28,11 @@
             border: solid 1px #CCC;
             width: auto;
             padding: 2px 3px;
-        }
+        {"}"}
     </style>
 </head>
 <body>
-    <!--Show the app here.-->
+    <!--Show the app here.--{">"}
     <div id="container" style="width:700px;"></div>
 </body>
 
@@ -56,9 +56,9 @@
                 for (var key in this.myBooks[i]) {
                     if (this.col.indexOf(key) === -1) {
                         this.col.push(key);
-                    }
-                }
-            }
+                    {"}"}
+                {"}"}
+            {"}"}
 
             // CREATE A TABLE.
             var table = document.createElement('table');
@@ -71,7 +71,7 @@
                 var th = document.createElement('th');
                 th.innerHTML = this.col[h].replace('_', ' ');
                 tr.appendChild(th);
-            }
+            {"}"}
 
             // Add rows using JSON data.
             for (var i = 0; i < this.myBooks.length; i++) {
@@ -81,7 +81,7 @@
                 for (var j = 0; j < this.col.length; j++) {
                     var tabCell = tr.insertCell(-1);
                     tabCell.innerHTML = this.myBooks[i][this.col[j]];
-                }
+                {"}"}
 
                 // Dynamically create and add elements to table cells with events.
 
@@ -128,7 +128,7 @@
                 btDelete.setAttribute('style', 'background-color:#ED5650;');
                 btDelete.setAttribute('onclick', 'crudApp.Delete(this)');   // ADD THE BUTTON's 'onclick' EVENT.
                 this.td.appendChild(btDelete);
-            }
+            {"}"}
 
 
             // ADD A ROW AT THE END WITH BLANK TEXTBOXES AND A DROPDOWN LIST (FOR NEW ENTRY).
@@ -137,7 +137,7 @@
 
             for (var j = 0; j < this.col.length; j++) {
                 var newCell = tr.insertCell(-1);
-                if (j >= 1) {
+                if (j {">"}= 1) {
 
                     if (j == 2) {   // WE'LL ADD A DROPDOWN LIST AT THE SECOND COLUMN (FOR Category).
 
@@ -146,17 +146,17 @@
                         for (k = 0; k < this.category.length; k++) {
                             select.innerHTML = select.innerHTML +
                                 '<option value="' + this.category[k] + '">' + this.category[k] + '</option>';
-                        }
+                        {"}"}
                         newCell.appendChild(select);
-                    }
+                    {"}"}
                     else {
                         var tBox = document.createElement('input');          // CREATE AND ADD A TEXTBOX.
                         tBox.setAttribute('type', 'text');
                         tBox.setAttribute('value', '');
                         newCell.appendChild(tBox);
-                    }
-                }
-            }
+                    {"}"}
+                {"}"}
+            {"}"}
 
             this.td = document.createElement('td');
             tr.appendChild(this.td);
@@ -173,7 +173,7 @@
             var div = document.getElementById('container');
             div.innerHTML = '';
             div.appendChild(table);    // ADD THE TABLE TO THE WEB PAGE.
-        };
+        {"}"};
 
         // ****** OPERATIONS START.
 
@@ -198,8 +198,8 @@
             for (i = 0; i < this.col.length; i++) {
                 var td = tab.getElementsByTagName("td")[i];
                 td.innerHTML = this.myBooks[(activeRow - 1)][this.col[i]];
-            }
-        }
+            {"}"}
+        {"}"}
 
 
         // EDIT DATA.
@@ -216,10 +216,10 @@
                     for (k = 0; k < this.category.length; k++) {
                         ele.innerHTML = ele.innerHTML +
                             '<option value="' + this.category[k] + '">' + this.category[k] + '</option>';
-                    }
+                    {"}"}
                     td.innerText = '';
                     td.appendChild(ele);
-                }
+                {"}"}
                 else {
                     var td = tab.getElementsByTagName("td")[i];
                     var ele = document.createElement('input');      // TEXTBOX.
@@ -227,8 +227,8 @@
                     ele.setAttribute('value', td.innerText);
                     td.innerText = '';
                     td.appendChild(ele);
-                }
-            }
+                {"}"}
+            {"}"}
 
             var lblCancel = document.getElementById('lbl' + (activeRow - 1));
             lblCancel.setAttribute('style', 'cursor:pointer; display:block; width:20px; float:left; position: absolute;');
@@ -238,7 +238,7 @@
 
             // HIDE THIS BUTTON.
             oButton.setAttribute('style', 'display:none;');
-        };
+        {"}"};
 
 
         // DELETE DATA.
@@ -246,7 +246,7 @@
             var activeRow = oButton.parentNode.parentNode.rowIndex;
             this.myBooks.splice((activeRow - 1), 1);    // DELETE THE ACTIVE ROW.
             this.createTable();                         // REFRESH THE TABLE.
-        };
+        {"}"};
 
         // SAVE DATA.
         this.Save = function (oButton) {
@@ -258,10 +258,10 @@
                 var td = tab.getElementsByTagName("td")[i];
                 if (td.childNodes[0].getAttribute('type') == 'text' || td.childNodes[0].tagName == 'SELECT') {  // CHECK IF ELEMENT IS A TEXTBOX OR SELECT.
                     this.myBooks[(activeRow - 1)][this.col[i]] = td.childNodes[0].value;      // SAVE THE VALUE.
-                }
-            }
+                {"}"}
+            {"}"}
             this.createTable();     // REFRESH THE TABLE.
-        }
+        {"}"}
 
         // CREATE NEW.
         this.CreateNew = function (oButton) {
@@ -276,24 +276,24 @@
                     var txtVal = td.childNodes[0].value;
                     if (txtVal != '') {
                         obj[this.col[i]] = txtVal.trim();
-                    }
+                    {"}"}
                     else {
                         obj = '';
                         alert('all fields are compulsory');
                         break;
-                    }
-                }
-            }
+                    {"}"}
+                {"}"}
+            {"}"}
             obj[this.col[0]] = this.myBooks.length + 1;     // NEW ID.
 
-            if (Object.keys(obj).length > 0) {      // CHECK IF OBJECT IS NOT EMPTY.
+            if (Object.keys(obj).length {">"} 0) {      // CHECK IF OBJECT IS NOT EMPTY.
                 this.myBooks.push(obj);             // PUSH (ADD) DATA TO THE JSON ARRAY.
                 this.createTable();                 // REFRESH THE TABLE.
-            }
-        }
+            {"}"}
+        {"}"}
 
         // ****** OPERATIONS END.
-    }
+    {"}"}
 
     crudApp.createTable();
 </script>
