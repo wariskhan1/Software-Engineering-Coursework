@@ -1,8 +1,11 @@
 var express = require('express');
 var mysql = require('mysql');
-const { RR } = require('mysql/lib/PoolSelector');
 var app = express();
 
+var pug = require('pug');
+
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 var db = mysql.createConnection({
     host: 'localhost',
@@ -13,25 +16,34 @@ var db = mysql.createConnection({
 });
 
 
-// Connect to database
-db.connect(function(err){
-  if(err){
-    return console.error('Error: ' + err.message);
-  }
-  console.log('Database connected.');
+app.get('/languages', function(req,res){
+  res.render('languages_page');
+
+
+  var languagesList = [];
+
+  db.query('SELECT Language, Percentage FROM countrylanguage', function(err, rows, fields) {
+    if (err) {
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      // Loop check on each row
+      for (var i = 0; i < rows.length; i++) {
+
+        // Create an object to save current row's data
+        var language = {
+          'Language':rows[i].Language,
+          'Percentage':rows[i].Percentage,
+        }
+        // Add object into array
+        languagesList.push(language);
+    }
+
+    // Render index.pug page using array 
+    res.render('languages', {"languagesList":languagesList});
+    }
 });
 
-app.get('/languages', function(req,res){
-  res.send("Working...");
-  /*
-  db.connect(function(err){
-    if(err) throw err;
-    db.query("SELECT * FROM most_popular_languages", function(err,result,fields){
-      if(err) throw err;
-      console.log(result);
-    });
-  });
-  */
+  
 });
 
 app.listen(3000, function(err){
