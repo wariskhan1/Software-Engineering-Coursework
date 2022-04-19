@@ -25,9 +25,10 @@ html
         p(style='font-size: 20px; text-align: center; letter-spacing: 4px') Enter the number of languages you want to see.
         div(style= 'margin-top: 80px')
           table
+            for language in languagesList
               tr
-                td= {Language}
-                td= {Percentage}
+                td= language.Language
+                td= language.Percentage
 
     // Footer with information about the author
     .Footer
