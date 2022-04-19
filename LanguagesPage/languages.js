@@ -21,7 +21,7 @@ app.get('/languages', function(req,res){
   var languagesList = [];
 
   // Define SQL query
-  db.query('SELECT Language, Percentage FROM countrylanguage', function(err, rows, fields) {
+  db.query("SELECT Language, ROUND(SUM(country.Population * Percentage)/100) AS 'Number of people' FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code GROUP BY countrylanguage.Language ORDER BY ROUND(SUM(country.Population * Percentage)/100) DESC;", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     }
