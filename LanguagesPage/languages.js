@@ -1,5 +1,6 @@
 var express = require('express');
 var mysql = require('mysql');
+const Connection = require('mysql/lib/Connection');
 var app = express();
 
 var pug = require('pug');
@@ -7,6 +8,7 @@ var pug = require('pug');
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+// Create connection to database
 var db = mysql.createConnection({
     host: 'localhost',
     user: 'BKobak',
@@ -15,17 +17,15 @@ var db = mysql.createConnection({
     port: 3306
 });
 
-
 app.get('/languages', function(req,res){
-  res.render('languages_page');
-
-
   var languagesList = [];
 
+  // Define SQL query
   db.query('SELECT Language, Percentage FROM countrylanguage', function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
-    } else {
+    }
+    else {
       // Loop check on each row
       for (var i = 0; i < rows.length; i++) {
 
@@ -37,13 +37,10 @@ app.get('/languages', function(req,res){
         // Add object into array
         languagesList.push(language);
     }
-
-    // Render index.pug page using array 
-    res.render('languages', {"languagesList":languagesList});
+    // Render languages_page.pug page using array
+    res.render('languages_page', {"languagesList":languagesList});
     }
-});
-
-  
+  });  
 });
 
 app.listen(3000, function(err){
