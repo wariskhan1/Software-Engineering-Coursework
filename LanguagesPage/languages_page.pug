@@ -8,9 +8,9 @@ html
     // Add style elements
     style.
       body {margin: 25px; background-color: black; color: white;}
-      h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Georgia'; text-align: left; margin-top: 65px; margin-left: 65px; margin-bottom: 50px;}
+      h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Arial Black'; text-align: left; margin-top: 65px; margin-left: 68px; margin-bottom: 50px;}
       img {display: block; margin-left: auto; margin-right: auto;}
-      .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; }
+      .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacity: 68%;}
       .List {text-align: left;}
   body(style= 'background-image: url(https://wallup.net/wp-content/uploads/2019/09/45440-earth-black-planet-lights-night.jpg); background-repeat: no-repeat;')
     // Division for image
@@ -18,10 +18,10 @@ html
     // Division for paragraph and languages list
     .List
       div(style='margin-left: 15px; font-size: 20px;')
-        p(style='text-align: left; margin-left: 65px; font-size: 25px; font-family: Oswald, sans-serif; letter-spacing: 1px')
+        p(style='text-align: left; margin-left: 75px; font-size: 25px; font-family: Oswald, sans-serif; letter-spacing: 1px')
             b Find out which languages are the most popular in the world.
-        p(style='font-size: 20px; text-align: left; margin-left: 145px; letter-spacing: 4.5px') Enter the number of languages you want to see.
-          table(style= 'margin-top: 80px; width:100%; background-color: black; opacity: 80%')
+        p(style='font-size: 20px; text-align: left; margin-left: 225px; letter-spacing: 5px') Check how many people speak them.
+          table(style= 'margin-top: 80px; width: 5%; background-color: black; opacity: 85%; font-size: 25px; margin-left: 50px')
             for language in languagesList
               tr
                 td= language.Language
