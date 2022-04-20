@@ -1,117 +1,50 @@
-var express = require("express");
-var mysql = require("mysql");
-
-var app = express();
-
-// Create connections
-function DBConnection(){
-    return mysql.createConnection({
-        host    : 'localhost',
-        user    : "root",
-        password: "foobar",
-        database: 'world'
-    });
-}
-
-// Use pug as templating engine
-app.set('reportdata', 'pug');
-
-app.get('/index', function(req,res){
-    var countrycityList = [];
-
-    // Connect to database
-    var connection = DBConnection();
-    connection.connect();
-
-    connection.query('SELECT countrycity, Percentage FROM most_popular_countrycity',function(err, rows, fields){
-        if (err){
-            res.status(500).json({"status_code": 500,"status_message": "internal server error"});
-        } else{
-            for (var i = 0; i < rows.length; i++){
-                var countrycity = {
-                    'countrycity':rows[i].countrycity,
-                    'percentage':rows[i].percentage
-                }
-                countrycity.push(countrycity)
-            }
-            res.render('index', {"countrycity": countrycity});
-        }
-    });
-    connection.end();
-});
-
-// Listen on port 8080
-app.listen(8080, function () {
-    console.log('listening on port', 8080);
-});
-
 var express = require('express');
 var mysql = require('mysql');
+const Connection = require('mysql/lib/Connection');
 var app = express();
 
+var pug = require('pug');
+
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+// Create connection to database
 var db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'BKobak',
     password: 'foobar',
     database: 'world',
-    port: 8081
+    port: 3306
 });
 
-// Use pug as templating engine
-app.set('reportdata', 'pug');
+app.get('/reportdata', function(req,res){
+  var languagesList = [];
 
-// Connect to database
-db.connect(function(err){
-  if(err){
-    return console.error('Error: ' + err.message);
-  }
-  console.log('Database connected.');
+  // Define SQL query
+  db.query("SELECT Language, ROUND(SUM(country.Population * Percentage)/100) AS 'Number of people' FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code GROUP BY countrylanguage.Language ORDER BY ROUND(SUM(country.Population * Percentage)/100) DESC;", function(err, rows, fields) {
+    if (err) {
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    }
+    else {
+      // Loop check on each row
+      for (var i = 0; i < rows.length; i++) {
+
+        // Create an object to save current row's data
+        var language = {
+          'Language':rows[i].countrycity,
+          'Percentage':rows[i].Percentage,
+        }
+        // Add object into array
+        countrycityList.push(countrycity);
+    }
+    // Render languages_page.pug page using array
+    res.render('countrycity_page', {"countrycityList":countrycityList});
+    }
+  });  
 });
 
-app.get('/countrycity', function(req,res){
-  res.send("Hello");
-  let sql = "CREATE DATABASE testNode";
-  db.query(sql,function(err,results,fields){
-    if(err) throw err;
-    res.send("New Database is Created");
-  })
-});
-
-app.listen(3001, function(err){
+app.listen(3000, function(err){
   if(err) throw err;
   console.log("Running on port 3000");
-  console.log("You can access using http://localhost:3000/countrycity")
-});
-
-
-
-
-
-const bodyParser = require('body-parser');
-const cors = require('cors')
-const res = require('express/lib/response');
-//const app = express();
-//const mysql = require('mysql')
-
-app.use(cors());
-app.use(express.json())
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.post("/api/insert", (req, res) => {
-
-
-const name = req.body.name
-const pop = req.body.pop
-const ccity = req.body.ccity
-const cc = req.body.cc
-
- const sqlInsert = 
- "INSERT INTO city (Name, CountryCode, Population, District) VALUES (?,?)"
- db.query(sqlInsert, [Name, Population, CountryCode, District], (err,result)=> {
-     console.log(result);
-  })
-});
-    
-app.listen(3001, () => {
-   console.log("running on port 3001");
+  console.log("You can access the webpage using http://localhost:3000/countrycity")
 });
