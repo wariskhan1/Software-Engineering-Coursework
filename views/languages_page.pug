@@ -21,11 +21,12 @@ html
         p(style='text-align: left; margin-left: 75px; font-size: 25px; font-family: Oswald, sans-serif; letter-spacing: 1px')
             b Find out which languages are the most popular in the world.
         p(style='font-size: 20px; text-align: left; margin-left: 225px; letter-spacing: 5px') Check how many people speak them.
-          table(style= 'margin-top: 80px; width: 5%; background-color: black; opacity: 85%; font-size: 25px; margin-left: 50px')
+          table(style= 'margin-top: 80px; width: 65%; background-color: black; opacity: 65%; font-size: 25px; margin-left: 50px')
             for language in languagesList
               tr
                 td= language.Language
                 td= language.Percentage
+
     // Footer with information about the author
     .Footer
       footer
