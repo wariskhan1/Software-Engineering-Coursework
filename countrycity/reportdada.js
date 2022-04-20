@@ -18,10 +18,10 @@ var db = mysql.createConnection({
 });
 
 app.get('/reportdata', function(req,res){
-  var languagesList = [];
+  var reportdataLis = [];
 
   // Define SQL query
-  db.query("SELECT Language, ROUND(SUM(country.Population * Percentage)/100) AS 'Number of people' FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code GROUP BY countrylanguage.Language ORDER BY ROUND(SUM(country.Population * Percentage)/100) DESC;", function(err, rows, fields) {
+  db.query("SELECT name, population from country order by population desc;", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     }
@@ -30,15 +30,16 @@ app.get('/reportdata', function(req,res){
       for (var i = 0; i < rows.length; i++) {
 
         // Create an object to save current row's data
-        var language = {
-          'Language':rows[i].countrycity,
+        var reportdata = {
+          'reportdata':rows[i].reportdata,
           'Percentage':rows[i].Percentage,
         }
         // Add object into array
-        countrycityList.push(countrycity);
+        reportdataList
+  .push(reportdata);
     }
-    // Render languages_page.pug page using array
-    res.render('countrycity_page', {"countrycityList":countrycityList});
+    // Render reportdatas_page.pug page using array
+    res.render('reportdata', {"reportdataList":reportdataLis});
     }
   });  
 });
@@ -46,5 +47,5 @@ app.get('/reportdata', function(req,res){
 app.listen(3000, function(err){
   if(err) throw err;
   console.log("Running on port 3000");
-  console.log("You can access the webpage using http://localhost:3000/countrycity")
+  console.log("You can access the webpage using http://localhost:3000/reportdata")
 });
