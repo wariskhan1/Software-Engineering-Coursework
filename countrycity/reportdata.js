@@ -31,8 +31,7 @@ app.get('/reportdata', function(req,res){
 
         // Create an object to save current row's data
         var reportdata = {
-          'reportdata':rows[i].reportdata,
-          'Percentage':rows[i].Percentage,
+          'reportdata':rows[i].reportdata
         }
         // Add object into array
         reportdataList
