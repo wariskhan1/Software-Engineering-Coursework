@@ -43,6 +43,17 @@ app.get('/reportdata', function(req,res){
   });  
 });
 
+
+ 
+let sql = "SELECT name, population from country order by population desc;";
+connection.query(sql, (error, results, fields) => {
+  if (error) {
+    return console.error(error.message);
+  }
+  console.log(results);
+});
+
+
 app.listen(3000, function(err){
   if(err) throw err;
   console.log("Running on port 3000");
