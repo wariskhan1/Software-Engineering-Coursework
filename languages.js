@@ -21,6 +21,27 @@ app.get('/languages', function(req,res){
   var languagesList = [];
 
   // Define SQL query
+  db.query("SELECT Language, Percentage FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code ORDER BY Percentage DESC;", function(err, rows, fields) {
+    if (err) {
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    }
+    else {
+      // Loop check on each row
+      for (var i = 0; i < rows.length; i++) {
+
+        // Create an object to save current row's data
+        var language = {
+          'Language':rows[i].Language,
+          'Percentage':rows[i].Percentage,
+        }
+        // Add object into array
+        languagesList.push(language);
+      }
+    // Render languages_page.pug page using array
+    res.render('languages_page', {"languagesList":languagesList});
+    }
+  });
+  /*
   db.query("SELECT Language, ROUND(SUM(country.Population * Percentage)/100) AS 'Number of people' FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code GROUP BY countrylanguage.Language ORDER BY ROUND(SUM(country.Population * Percentage)/100) DESC;", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
@@ -40,7 +61,8 @@ app.get('/languages', function(req,res){
     // Render languages_page.pug page using array
     res.render('languages_page', {"languagesList":languagesList});
     }
-  });  
+  });
+  */
 });
 
 app.listen(3000, function(err){
