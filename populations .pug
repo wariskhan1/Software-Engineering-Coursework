@@ -1,0 +1,40 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+meta(http-equiv="X-UA-Compatible", content="ie=edge")
+title Countries Population
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css")
+link(rel="stylesheet", href="style.css")
+header
+  .container
+    h1 All the Countries
+    button.btn-toggle#toggle
+      i.far.fa-moon
+      i.fas.fa-moon
+      | 
+Dark Mode
+
+section
+  .container
+    input#search.search(type="text", placeholder="Search for a country")
+    .dropdown#filter
+      | 
+Filter by Region
+
+      i.fas.fa-chevron-down
+      ul
+        li All
+        li Africa
+        li Americas
+        li Asia
+        li Europe
+        li Oceania
+.modal#modal
+  .container
+    button.btn-close#close
+      i.fas.fa-times
+    img(src, alt)
+    .modal-body
+section
+  .container.countries#countries
+    h2 Countries Loading...
+script(src="script.js")
