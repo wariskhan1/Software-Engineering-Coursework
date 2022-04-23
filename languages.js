@@ -21,14 +21,13 @@ app.get('/languages', function(req,res){
   var languagesList = [];
 
   // Define SQL query
-  db.query("SELECT Language, Percentage FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code ORDER BY Percentage DESC;", function(err, rows, fields) {
+  db.query("SELECT Language, Percentage FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code;", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     }
     else {
       // Loop check on each row
       for (var i = 0; i < rows.length; i++) {
-
         // Create an object to save current row's data
         var language = {
           'Language':rows[i].Language,

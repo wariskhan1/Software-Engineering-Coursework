@@ -1,44 +1,69 @@
 doctype html
-html
-  head
-    // Add information about the character encoding
-    meta(charset='utf-8')
-    // Add title
-    title Languages
-    // Add style elements
-    style.
-      body {margin: 25px; background-color: black; color: white;}
-      h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Arial Black'; text-align: left; margin-top: 65px; margin-left: 68px; margin-bottom: 50px;}
-      img {display: block; margin-left: auto; margin-right: auto;}
-      h2 {color: rgb(0, 255, 13); margin-left: 50px; margin-top: 80px; font-size: 25px; font-family: Oswald, sans-serif;}
-      .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacity: 68%;}
-      .List {text-align: left;}
-  body(style= 'background-image: url(https://wallup.net/wp-content/uploads/2019/09/45440-earth-black-planet-lights-night.jpg); background-repeat: no-repeat;')
-    // Division for image
-    h1 MOST POPULAR LANGUAGES
-    // Division for paragraph and languages list
+head
+  title Languages
+  meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')
+  meta(Language='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  style.
+    th, td {
+    padding: 5px; 
+    }
+    th {
+    text-align: left;
+    }
+    body {margin: 25px; background-color: black; color: white;}
+    h1 {color: rgb(0, 255, 13); font-size: 50px; font-family: 'Arial Black'; text-align: left; margin-top: 65px; margin-left: 50px; margin-bottom: 50px;}
+    h2 {color: rgb(0, 255, 13); margin-left: 50px; margin-top: 80px; font-size: 25px; font-family: Oswald, sans-serif;}
+    .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacity: 68%;}
+    .List {text-align: left;}
+    span {font-size: 26px;}
+    thead {background-color: white; color: black}
+body(style= 'background-image: url(https://cutewallpaper.org/22/iphone-black-earth-hd-wallpapers/2408316723.jpg); background-repeat: no-repeat;')
+  h1 MOST POPULAR LANGUAGES
     .List
       div(style='margin-left: 15px; font-size: 20px;')
-        p(style='text-align: left; margin-left: 75px; font-size: 25px; font-family: Oswald, sans-serif; letter-spacing: 1px')
-            b Find out which languages are the most popular in the world.
-        p(style='font-size: 20px; text-align: left; margin-left: 225px; letter-spacing: 5px') Check how many people speak them.
-        section.container
-          h2 Languages Of The World
-          input.light-table-filter(type='search' data-table='order-table' placeholder='Filter' style='margin-left: 50px')
-          table.order-table.table(style= 'margin-top: 25px; width: 50%; background-color: black; opacity: 65%; font-size: 25px; margin-left: 50px')
-            thead
-              th= Language
-              th= Percentage
-            tbody
-              for language in languagesList
+        p(style='text-align: left; margin-left: 25px; font-size: 23px; color: white; font-family: Oswald, sans-serif; letter-spacing: 1px; background-color: black; width: 735px')
+          b Find out which languages are the most popular in the world.
+        p(style='font-size: 20px; text-align: left; margin-left: 150px; color: white; font-size: 20px; font-family: Times New Roman; letter-spacing: 5px; background-color:black; width: 495px') Check how many people speak them.
+        
+  h2 Languages Of The World
+  input#myInput(type='text', onkeyup='myFunction()', placeholder='search for language', style='margin-left: 50px')
+  table#myTable(style= 'margin-top: 15px; width: 50%; background-color: rgba(0,0,0,0.8); font-size: 23px; margin-left: 50px;')
+    thead
+      tr.header
+        th
+          span#Language.w3-button.table-column
+            | Language
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            | Percentage 
+            i.caret
+    tbody
+        for language in languagesList
                 tr
                   td= language.Language
                   td= language.Percentage
 
-    // Footer with information about the author
-    .Footer
-      footer
-        div(style= 'margin: 15px')
-          br
-          p Author: Barbara Anna Kobak
-          br
+script.
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
