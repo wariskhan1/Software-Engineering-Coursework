@@ -1,20 +1,17 @@
-# Specify base image (NodeJS)
+# Base image to use
 FROM node:latest
 
-# Update the Ubuntu image
-RUN apt-get -y update
+# Set a working directory
+WORKDIR /src
 
-# Create another image layer on top of base to install requirements
-FROM base AS requirements
+# Copy across project configuration information
+COPY package*.json /src/
 
-# Install the requirements
-RUN pip3 install -r requirements.txt
+# Copy across all files
+COPY . /src
 
-# Create an intermediate image layer for testing purpose
-FROM requirements AS test
+# Expose application port
+EXPOSE 3000
 
-# Create the build context
-COPY /usr/src/coursework /desktop/coursework
-
-# Run script after image is built
-CMD [ "cmd", "project.js" ]
+# Run no-demon so files can be updated
+CMD ["nodemon", "bin/www"]
