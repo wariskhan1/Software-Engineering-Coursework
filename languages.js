@@ -21,7 +21,7 @@ app.get('/languages', function(req,res){
   var languagesList = [];
 
   // Define SQL query
-  db.query("SELECT Language, Percentage FROM countrylanguage INNER JOIN country ON countrylanguage.`CountryCode` = country.Code;", function(err, rows, fields) {
+  db.query("SELECT cl.Language, cl.Percentage, c.Name as 'Country' FROM countrylanguage cl, country c WHERE c.Code = cl.CountryCode GROUP BY cl.Language, c.Code", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     }
@@ -32,6 +32,7 @@ app.get('/languages', function(req,res){
         var language = {
           'Language':rows[i].Language,
           'Percentage':rows[i].Percentage,
+          'Country':rows[i].Country,
         }
         // Add object into array
         languagesList.push(language);
