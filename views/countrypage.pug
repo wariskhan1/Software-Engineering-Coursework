@@ -1,9 +1,9 @@
 doctype html
 head
   // Define title
-  title Cities
+  title Countries
   meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')
-  meta(city='viewport' content='width=device-width, initial-scale=1')
+  meta(country='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   style.
     th, td {
@@ -13,45 +13,55 @@ head
     text-align: left;
     }
     body {margin: 25px; background-color: black; color: white;}
-    h1 {font-size: 50px; font-family: 'Arial Black'; color: white; background-color: black; text-align: center ; margin-left: 48px; width: 55%}
-    .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacity: 68%;}
+    h1 {font-size: 50px; font-family: 'Arial Black'; color: white; background-color: rgba(0,0,0,0.8); text-align: center ; margin-left: 50px; width: 55%}
+    .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacountry: 68%;}
     .List {text-align: left;}
     span {font-size: 18px;}
     thead {background-color: white; color: black;}
     tbody {font-size: 18px}
-body(style= 'background-image: url(https://www.itl.cat/pngfile/big/16-165666_dark-city-cartoon-dark-city-background.png); background-size: 125%; background-repeat: no-repeat;')
-  h1 CITIES OVER THE WORLD
+body(style= 'background-image: url(https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Black-Map-Wallpaper-11.jpg); background-size: 125%; background-repeat: no-repeat;')
+  h1 COUNTRIES
     .List
       div(style='font-size: 20px;')
-        p(style='text-align: center; margin-top: px; font-size: 28px; color: white; font-family: Oswald, sans-serif; letter-spacing: 1px;  height: 53px')
-          b Check information about the city.
-  input#myInput(type='text', onkeyup='myFunction()', placeholder='search for city', style='margin-left: 50px; width: 150px; height: 25px')
+        p(style='text-align: center; margin-top: px; font-size: 23px; color: white; font-family: Oswald, sans-serif; letter-spacing: 1px;  height: 50px')
+          b Check information about the country.
+  input#myInput(type='text', onkeyup='myFunction()', placeholder='search for country', style='margin-left: 50px; width: 150px; height: 25px')
   table#myTable(style= 'margin-top: 10px; width: 55%; background-color: rgba(0,0,0,0.8); margin-left: 50px;')
     thead
       tr.header
         th
-          span#city.w3-button.table-column
-            | City
+          span#country.w3-button.table-column
+            | Country
             i.caret
         th
-          span#city.w3-button.table-column
-            | District
-            i.caret
-        th
-          span#quantity.w3-button.table-column
-            |Population
+          span#country.w3-button.table-column
+            | Code
             i.caret
         th
           span#quantity.w3-button.table-column
-            | Country 
+            | Continent
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            | Population
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            | Region 
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            | Capital
             i.caret
     tbody
-        for city in citiesList
+        for country in countriesList
                 tr
-                  td= city.Name
-                  td= city.District
-                  td= city.Population
-                  td= city.Country
+                  td= country.Name
+                  td= country.Code 
+                  td= country.Continent
+                  td= country.Population
+                  td= country.Region
+                  td= country.Capital
 
   // Footer with information about the author
   .Footer
