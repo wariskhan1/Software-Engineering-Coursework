@@ -1,0 +1,85 @@
+doctype html
+head
+  // Define title
+  title Countries and Cities
+  meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')
+  meta(city='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  style.
+    th, td {
+    padding: 5px; 
+    }
+    th {
+    text-align: left;
+    }
+    body {margin: 25px; background-color: black; color: white;}
+    h1 {font-size: 50px; font-family: 'Arial Black'; color: white; background-color: black; text-align: center ; margin-left: 48px; width: 55%}
+    .Footer {background: rgb(30, 30, 35); margin: 35px; font-size: 20px; opacity: 68%;}
+    .List {text-align: left;}
+    span {font-size: 18px;}
+    thead {background-color: white; color: black;}
+    tbody {font-size: 18px}
+body(style= 'background-image: url(https://www.itl.cat/pngfile/big/16-165666_dark-city-cartoon-dark-city-background.png); background-size: 125%; background-repeat: no-repeat;')
+  h1 COUNTRIES AND CITIES
+    .List
+      div(style='font-size: 20px;')
+        p(style='text-align: center; margin-top: px; font-size: 23px; color: white; font-family: Oswald, sans-serif; letter-spacing: 1px;  height: 50px')
+          b Check information about the city.
+  input#myInput(type='text', onkeyup='myFunction()', placeholder='search for city', style='margin-left: 50px; width: 150px; height: 25px')
+  table#myTable(style= 'margin-top: 10px; width: 55%; background-color: rgba(0,0,0,0.8); margin-left: 50px;')
+    thead
+      tr.header
+        th
+          span#city.w3-button.table-column
+            | City
+            i.caret
+        th
+          span#city.w3-button.table-column
+            | District
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            |Population
+            i.caret
+        th
+          span#quantity.w3-button.table-column
+            | Country 
+            i.caret
+    tbody
+        for city in citiesList
+                tr
+                  td= city.Name
+                  td= city.District
+                  td= city.Population
+                  td= city.Country
+
+  // Footer with information about the author
+  .Footer
+    footer
+      div(style= 'margin: 15px')
+        br
+        p Author: Barbara Anna Kobak
+        br
+
+script.
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
