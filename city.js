@@ -16,7 +16,7 @@ var db = mysql.createConnection({
     port: 3306
 });
 
-app.get('/countrycity', function(req,res){
+app.get('/city', function(req,res){
   var citiesList = [];
 
   // Define SQL query
@@ -38,7 +38,7 @@ app.get('/countrycity', function(req,res){
         citiesList.push(city);
       }
     // Render languages_page.pug page using array
-    res.render('countrycity', {"citiesList":citiesList});
+    res.render('citypage', {"citiesList":citiesList});
     }
   });
 });
@@ -46,5 +46,5 @@ app.get('/countrycity', function(req,res){
 app.listen(3002, function(err){
   if(err) throw err;
   console.log("Running on port 3002");
-  console.log("You can access the webpage using http://localhost:3002/countrycity")
+  console.log("You can access the webpage using http://localhost:3002/city")
 });
