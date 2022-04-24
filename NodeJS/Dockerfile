@@ -1,17 +1,21 @@
 # Base image to use
 FROM node:latest
 
-# Set a working directory
+# set a working directory
 WORKDIR /src
 
 # Copy across project configuration information
-COPY package*.json /src/
+# Install application dependencies
+COPY package*.json /package.json
 
-# Copy across all files
+# Ask npm to install the dependencies
+RUN npm install -g nodemon && npm install
+
+# Copy across all our files
 COPY . /src
 
-# Expose application port
-EXPOSE 3000
+# Expose our application port (3001)
+EXPOSE 3001
 
 # Run no-demon so files can be updated
 CMD ["nodemon", "bin/www"]

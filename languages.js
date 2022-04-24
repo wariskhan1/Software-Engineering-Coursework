@@ -1,6 +1,5 @@
 var express = require('express');
-var mysql = require('mysql');
-const Connection = require('mysql/lib/Connection');
+var mysql = require('mysql2');
 var app = express();
 
 var pug = require('pug');
@@ -11,7 +10,7 @@ app.set('view engine', 'pug');
 // Create connection to database
 var db = mysql.createConnection({
     host: 'localhost',
-    user: 'BKobak',
+    user: 'root',
     password: 'foobar',
     database: 'world',
     port: 3306
@@ -21,9 +20,9 @@ app.get('/languages', function(req,res){
   var languagesList = [];
 
   // Define SQL query
-  db.query("SELECT cl.Language, cl.Percentage, c.Name as 'Country' FROM countrylanguage cl, country c WHERE c.Code = cl.CountryCode GROUP BY cl.Language, c.Code", function(err, rows, fields) {
+  db.query("SELECT cl.Language, cl.Percentage, c.Name as 'Country' FROM countrylanguage cl, country c WHERE c.Code = cl.CountryCode", function(err, rows, fields) {
     if (err) {
-      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+      res.status(500).json({"status_code": 500,"status_message": "internal server error", "message": err});
     }
     else {
       // Loop check on each row
