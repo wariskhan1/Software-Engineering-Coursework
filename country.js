@@ -20,7 +20,7 @@ app.get('/country', function(req,res){
   var countriesList = [];
 
   // Define SQL query
-  db.query("SELECT * FROM country_report", function(err, rows, fields) {
+  db.query("SELECT * FROM country_report_2", function(err, rows, fields) {
     if (err) {
       res.status(500).json({"status_code": 500,"status_message": "internal server error", "message": err});
     }
