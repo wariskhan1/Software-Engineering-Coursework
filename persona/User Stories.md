@@ -23,7 +23,7 @@ so the more accurate and precise data I have, the easier the calculations will b
 [User Story For Mary Moore]
 
 **As a professional tour guide, I want to inform customers about information about the names of the capital
-in the ancient world, what is the difference between the countries in terms of the populations and civilizations
+cities, what is the difference between the countries in terms of the populations and civilizations
 so that my customers would feel like they have left with knowledge about the sites.**
 
 **As a tour guide, I want to be able to check informations about specific districts and regions so that I can more accurately recommend less crowded places to my customers who want to visit such places.**

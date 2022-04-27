@@ -5,7 +5,6 @@ FROM node:latest
 WORKDIR /src
 
 # Copy across project configuration information
-# Install application dependencies
 COPY package*.json /package.json
 
 # Ask npm to install the dependencies
